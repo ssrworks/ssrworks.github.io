@@ -306,4 +306,140 @@ footer a {
   color: #00d4ff;
   text-decoration: none;
   font-weight: 600;
-                              }
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+
+/* Tablets (max width 992px) */
+@media (max-width: 992px) {
+  #hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+  }
+
+  #hero p {
+    font-size: 1.1rem;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
+
+  nav ul {
+    gap: 25px;
+  }
+
+  .hero-content {
+    padding: 30px 45px;
+  }
+
+  .portfolio-item {
+    padding: 20px;
+  }
+}
+
+/* Mobile Large (max width 768px) */
+@media (max-width: 768px) {
+  #hero {
+    height: 70vh;
+    padding: 20px;
+  }
+
+  #hero h1 {
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    gap: 18px;
+    font-size: 0.9rem;
+  }
+
+  .hero-content {
+    padding: 22px 35px;
+    border-radius: 15px;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  .portfolio-item {
+    margin-bottom: 30px;
+    padding: 18px;
+  }
+
+  video {
+    height: auto;
+  }
+
+  .profile-img {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+/* Mobile Small (max width 480px) */
+@media (max-width: 480px) {
+  #hero {
+    height: auto;
+    padding: 70px 0 50px;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  #hero p {
+    font-size: 0.95rem;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+
+  .hero-content {
+    padding: 18px 20px;
+  }
+
+  section {
+    padding: 55px 5%;
+  }
+
+  section h2 {
+    font-size: 1.7rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .portfolio-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .portfolio-item {
+    padding: 15px;
+  }
+
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
