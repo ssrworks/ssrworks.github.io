@@ -25,7 +25,11 @@ body {
   background: linear-gradient(90deg, #00d4ff, #7a5cff);
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow: 0 0 18px rgba(0, 212, 255, 0.3);
+  text-shadow: 
+    0 0 18px rgba(0, 212, 255, 0.3);
+
+  /* NEW — clean neon outline */
+  -webkit-text-stroke: 2px rgba(0, 212, 255, 0.55);
 }
 
 #hero p {
@@ -52,14 +56,12 @@ body {
    ABOUT PARAGRAPH
 ------------------------------ */
 #about p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  padding: 20px;
-  background: rgba(255,255,255,0.03);
+  color: #000; /* black text */
+  background: rgba(255,255,255,0.9); /* soft white background for readability */
   border-left: 4px solid #00d4ff;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.1);
 }
 
 /* ------------------------------
@@ -83,19 +85,20 @@ body {
   position: relative;
   padding: 40px 60px;
 
-  /* 🔥 Background image inside card */
-  background: url("./Assets/Backgrounds/bggoku.jpg"),
-              rgba(255,255,255,0.06);
+  /* NEW — premium dark neon style */
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("./Assets/Backgrounds/bggoku.jpg");
+
   background-size: cover;
   background-position: center;
-  background-blend-mode: overlay;
-
-  backdrop-filter: blur(14px);
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 0 45px rgba(0, 212, 255, 0.12);
-
-  animation: fadeIn 1.2s ease-out;
+  border-radius: 22px;
+  box-shadow: 0 0 60px rgba(0, 212, 255, 0.15);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
 }
 
 /* Glow overlay inside card */
