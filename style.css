@@ -14,6 +14,9 @@ body {
   scroll-behavior: smooth;
 }
 
+/* ------------------------------
+   HERO CARD TEXT
+------------------------------ */
 #hero h1 {
   font-family: "Orbitron", sans-serif;
   font-size: 4.5rem;
@@ -45,6 +48,9 @@ body {
   opacity: 0.7;
 }
 
+/* ------------------------------
+   ABOUT PARAGRAPH
+------------------------------ */
 #about p {
   font-family: "Montserrat", sans-serif;
   font-size: 1.1rem;
@@ -56,22 +62,92 @@ body {
   box-shadow: 0 0 20px rgba(0, 212, 255, 0.05);
 }
 
-/* Remove Glass Card Background */
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+#hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(120deg, #121212, #1f1f1f);
+  padding: 20px;
+  position: relative;
+}
+
+/* ------------------------------
+   PREMIUM HERO CARD (WITH BACKGROUND IMAGE)
+------------------------------ */
 .hero-content {
+  position: relative;
   padding: 40px 60px;
-  background: none;
-  backdrop-filter: none;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
+
+  /* 🔥 Background image inside card */
+  background: url("./Assets/Backgrounds/your-image.jpg"),
+              rgba(255,255,255,0.06);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 0 45px rgba(0, 212, 255, 0.12);
+
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* Glow overlay inside card */
+.hero-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 212, 255, 0.22),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content h1,
+.hero-content p {
   position: relative;
   z-index: 2;
 }
 
 /* ------------------------------
-   SOCIAL ICONS (CONTACT)
+   PROFILE IMAGE
 ------------------------------ */
-social-icons {
+.profile-img {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #7b2eff, #3b0070);
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(150, 60, 255, 0.5);
+  animation: floatGlow 5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ------------------------------
+   SOCIAL ICONS
+------------------------------ */
+.social-icons {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -90,26 +166,6 @@ social-icons {
   transform: scale(1.15);
   opacity: 1;
   filter: drop-shadow(0 0 12px #00d4ff);
-}
-
-.profile-img {
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, #7b2eff, #3b0070);
-  border-radius: 50%;
-  margin: 0 auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 25px rgba(150, 60, 255, 0.5);
-  animation: floatGlow 5s ease-in-out infinite;
-}
-
-.profile-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
 }
 
 /* ------------------------------
@@ -144,39 +200,6 @@ nav ul li a {
 nav ul li a:hover {
   color: #00d4ff;
   text-shadow: 0 0 10px #00d4ff;
-}
-
-/* ------------------------------
-   HERO SECTION (WITH BACKGROUND IMAGE)
------------------------------- */
-
-#hero {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  /* 🔥 Your Background Image */
-  background-image: url("./Assets/Backgrounds/bggoku.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  position: relative;
-}
-
-/* Dark overlay for readability */
-#hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(2px);
-  z-index: 1;
 }
 
 /* ------------------------------
@@ -238,7 +261,7 @@ video {
 }
 
 /* ------------------------------
-   CONTACT FORM
+   CONTACT FORM (NOT BROKEN)
 ------------------------------ */
 form {
   max-width: 600px;
@@ -313,22 +336,19 @@ footer a {
 @media (max-width: 992px) {
   #hero h1 { font-size: 3.5rem; }
   #hero p { font-size: 1.1rem; }
-  section { padding: 60px 6%; }
   .hero-content { padding: 30px 45px; }
 }
 
 @media (max-width: 768px) {
   #hero { height: 70vh; padding: 20px; }
   #hero h1 { font-size: 2.6rem; }
-  #hero p { font-size: 1rem; }
-  .hero-content { padding: 22px 35px; }
+  .hero-content { padding: 25px 35px; }
   .profile-img { width: 95px; height: 95px; }
 }
 
 @media (max-width: 480px) {
   #hero { height: auto; padding: 70px 0 50px; }
   #hero h1 { font-size: 2rem; }
-  #hero p { font-size: 0.95rem; }
-  .hero-content { padding: 18px 20px; }
+  .hero-content { padding: 20px 25px; }
   .profile-img { width: 85px; height: 85px; }
 }
