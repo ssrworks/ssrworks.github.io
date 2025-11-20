@@ -56,19 +56,22 @@ body {
   box-shadow: 0 0 20px rgba(0, 212, 255, 0.05);
 }
 
+/* Remove Glass Card Background */
 .hero-content {
   padding: 40px 60px;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(14px);
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+  background: none;
+  backdrop-filter: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  z-index: 2;
 }
 
 /* ------------------------------
    SOCIAL ICONS (CONTACT)
 ------------------------------ */
-.social-icons {
+social-icons {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -109,16 +112,6 @@ body {
   border-radius: 50%;
 }
 
-/* Soft fade animation */
-.fade {
-  animation: fadeIn 1.2s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* ------------------------------
    NAVBAR
 ------------------------------ */
@@ -154,29 +147,36 @@ nav ul li a:hover {
 }
 
 /* ------------------------------
-   HERO SECTION
+   HERO SECTION (WITH BACKGROUND IMAGE)
 ------------------------------ */
+
 #hero {
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(120deg, #121212, #1f1f1f);
+
+  /* 🔥 Your Background Image */
+  background-image: url("./Assets/Backgrounds/your-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
 }
 
-#hero h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #00d4ff;
-  letter-spacing: 2px;
-  text-shadow: 0 0 20px #00d4ff;
-}
-
-#hero p {
-  margin-top: 15px;
-  font-size: 1.3rem;
-  opacity: 0.8;
+/* Dark overlay for readability */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
 /* ------------------------------
@@ -231,7 +231,6 @@ section h2::after {
   opacity: 0.85;
 }
 
-/* Video styling */
 video {
   width: 100%;
   border-radius: 10px;
@@ -311,135 +310,25 @@ footer a {
 /* ------------------------------
    RESPONSIVE DESIGN
 ------------------------------ */
-
-/* Tablets (max width 992px) */
 @media (max-width: 992px) {
-  #hero h1 {
-    font-size: 3.5rem;
-    letter-spacing: 3px;
-  }
-
-  #hero p {
-    font-size: 1.1rem;
-  }
-
-  section {
-    padding: 60px 6%;
-  }
-
-  nav ul {
-    gap: 25px;
-  }
-
-  .hero-content {
-    padding: 30px 45px;
-  }
-
-  .portfolio-item {
-    padding: 20px;
-  }
+  #hero h1 { font-size: 3.5rem; }
+  #hero p { font-size: 1.1rem; }
+  section { padding: 60px 6%; }
+  .hero-content { padding: 30px 45px; }
 }
 
-/* Mobile Large (max width 768px) */
 @media (max-width: 768px) {
-  #hero {
-    height: 70vh;
-    padding: 20px;
-  }
-
-  #hero h1 {
-    font-size: 2.6rem;
-    letter-spacing: 2px;
-  }
-
-  #hero p {
-    font-size: 1rem;
-  }
-
-  nav ul {
-    gap: 18px;
-    font-size: 0.9rem;
-  }
-
-  .hero-content {
-    padding: 22px 35px;
-    border-radius: 15px;
-  }
-
-  section h2 {
-    font-size: 2rem;
-  }
-
-  .portfolio-item {
-    margin-bottom: 30px;
-    padding: 18px;
-  }
-
-  video {
-    height: auto;
-  }
-
-  .profile-img {
-    width: 95px;
-    height: 95px;
-  }
+  #hero { height: 70vh; padding: 20px; }
+  #hero h1 { font-size: 2.6rem; }
+  #hero p { font-size: 1rem; }
+  .hero-content { padding: 22px 35px; }
+  .profile-img { width: 95px; height: 95px; }
 }
 
-/* Mobile Small (max width 480px) */
 @media (max-width: 480px) {
-  #hero {
-    height: auto;
-    padding: 70px 0 50px;
-  }
-
-  #hero h1 {
-    font-size: 2rem;
-    letter-spacing: 1px;
-  }
-
-  #hero p {
-    font-size: 0.95rem;
-  }
-
-  nav ul {
-    gap: 10px;
-  }
-
-  nav ul li a {
-    font-size: 0.8rem;
-    padding: 4px 6px;
-  }
-
-  .hero-content {
-    padding: 18px 20px;
-  }
-
-  section {
-    padding: 55px 5%;
-  }
-
-  section h2 {
-    font-size: 1.7rem;
-  }
-
-  #about p {
-    font-size: 1rem;
-    padding: 15px;
-  }
-
-  .portfolio-item h3 {
-    font-size: 1.3rem;
-  }
-
-  .portfolio-item {
-    padding: 15px;
-  }
-
-  .social-icons img {
-    width: 40px;
-    height: 40px;
-  }
-
-  footer {
-    font-size: 0.85rem;
-  }
+  #hero { height: auto; padding: 70px 0 50px; }
+  #hero h1 { font-size: 2rem; }
+  #hero p { font-size: 0.95rem; }
+  .hero-content { padding: 18px 20px; }
+  .profile-img { width: 85px; height: 85px; }
+}
