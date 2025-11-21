@@ -142,7 +142,7 @@ nav {
 .hero-card {
   text-align: center;
   max-width: 850px;
-  padding: 60px 50px;
+  padding: 60px 100px;
   border-radius: 24px;
   position: relative;
   overflow: hidden; /* Keeps the image inside the rounded corners */
@@ -154,7 +154,7 @@ nav {
       rgba(20, 20, 25, 0.8),  /* Top Left Transparency */
       rgba(5, 5, 10, 0.95)    /* Bottom Right Darkness */
     ),
-    url("./Assets/Backgrounds/bg1.jpg"); /* YOUR 4K IMAGE HERE */
+    url("./Assets/Backgrounds/bggoku.jpg"); /* YOUR 4K IMAGE HERE */
 
   background-size: cover;
   background-position: center;
