@@ -45,7 +45,7 @@ body {
 }
 
 /* ------------------------------
-   2. DYNAMIC BACKGROUND
+   2. DYNAMIC BACKGROUND (The Mesh)
 ------------------------------ */
 .ambient-bg {
   position: fixed;
@@ -127,7 +127,7 @@ nav {
 .nav-links a:hover::after { width: 100%; }
 
 /* ------------------------------
-   4. HERO SECTION
+   4. HERO SECTION (PREMIUM CARD)
 ------------------------------ */
 #hero {
   min-height: 100vh;
@@ -138,18 +138,61 @@ nav {
   padding-top: 80px; /* Compensate for fixed header */
 }
 
+/* THIS IS THE PREMIUM CARD STYLE */
 .hero-card {
   text-align: center;
-  max-width: 800px;
-  padding: 40px;
+  max-width: 850px;
+  padding: 60px 50px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden; /* Keeps the image inside the rounded corners */
+
+  /* 1. Background Image + Dark Overlay */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 20, 25, 0.8),  /* Top Left Transparency */
+      rgba(5, 5, 10, 0.95)    /* Bottom Right Darkness */
+    ),
+    url("./Assets/Backgrounds/bg1.jpg"); /* YOUR 4K IMAGE HERE */
+
+  background-size: cover;
+  background-position: center;
+
+  /* 2. Glassmorphism Blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* 3. Beveled Lighting Borders */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+  /* 4. Deep Premium Shadows */
+  box-shadow:
+    0 30px 70px -20px rgba(0, 0, 0, 0.9),  /* Deep Drop Shadow */
+    0 0 40px rgba(122, 92, 255, 0.1),      /* Subtle Purple Glow */
+    inset 0 0 20px rgba(255, 255, 255, 0.05); /* Inner Rim Light */
+    
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Profile & Badge */
+/* Hover Effect on the whole card */
+.hero-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 40px 80px -20px rgba(0, 0, 0, 0.95),
+    0 0 60px rgba(0, 212, 255, 0.15);
+}
+
+/* Profile Picture Styling */
 .profile-wrapper {
   position: relative;
   width: 150px;
   height: 150px;
   margin: 0 auto 2rem;
+  z-index: 2; /* Ensure it sits above the card background */
 }
 
 .profile-img {
@@ -183,6 +226,7 @@ nav {
   border-radius: 20px;
   white-space: nowrap;
   border: 2px solid var(--bg-dark);
+  z-index: 3;
 }
 
 @keyframes float {
@@ -197,6 +241,8 @@ h1 {
   margin-bottom: 10px;
   line-height: 1.1;
   text-transform: uppercase;
+  z-index: 2;
+  position: relative;
 }
 
 /* Glitch Text Effect */
@@ -211,7 +257,7 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bg-dark);
+  background: rgba(5, 5, 7, 0.9); /* Match generic dark bg */
 }
 .glitch::before {
   left: 2px;
@@ -234,8 +280,10 @@ h1 {
 
 .subtitle {
   font-size: 1.1rem;
-  color: var(--text-muted);
+  color: #e0e0e0; /* Brighter text for readability over image */
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
 }
 .separator { color: var(--secondary); margin: 0 10px; }
 
@@ -244,6 +292,8 @@ h1 {
   display: flex;
   gap: 20px;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .btn {
@@ -269,14 +319,14 @@ h1 {
 }
 
 .btn-secondary {
-  background: transparent;
-  border: 1px solid var(--glass-border);
-  color: var(--text-main);
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
 }
 
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.05);
-  border-color: var(--text-main);
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
 }
 
 /* ------------------------------
@@ -482,4 +532,5 @@ footer {
   .nav-links { display: none; } /* Hide Nav on Mobile for simplicity or add hamburger */
   .hero-buttons { flex-direction: column; }
   .portfolio-grid { grid-template-columns: 1fr; }
+  .hero-card { padding: 40px 20px; }
 }
