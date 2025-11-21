@@ -3,14 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSR Works - CapCut Video Editor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <title>Freak_JOD | CapCut Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <div class="ambient-bg"></div>
+
   <header>
     <nav>
-      <ul>
+      <div class="logo">SSR<span class="accent">.Works</span></div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -19,65 +26,131 @@
   </header>
 
   <section id="hero">
-    <div class="hero-content">
-      <div class="profile-img">
-          <img src="./Assets/ProfilePictures/freakjod.jpg" alt="Scripter Logo">
+    <div class="hero-card reveal">
+      <div class="profile-wrapper">
+        <div class="profile-img">
+          <img src="./Assets/ProfilePictures/freakjod.jpg" alt="Freak_JOD">
+        </div>
+        <div class="status-badge">Available for Work</div>
       </div>
-      <h1>Freak_JOD</h1>
-      <p>CapCut Video Editor | Transforming Ideas into Visual Stories</p>
+      
+      <h1>Freak_<span class="glitch" data-text="JOD">JOD</span></h1>
+      <p class="subtitle">Level 99 Video Editor <span class="separator">|</span> Visual Storyteller</p>
+      
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn btn-primary">View My Edits</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p> I’m a 16-year-old Video Editor from India (GMT +5:30) with over 2 years of editing experience. 
-            I specialize in creating flow-cut editing, edits based on tone, and immersive all types of edits.</p>
+  <section id="about" class="reveal">
+    <div class="section-header">
+      <h2>Who Am I?</h2>
+    </div>
+    <div class="glass-card">
+      <p>
+        I’m a <span class="highlight">16-year-old Video Editor</span> from India 🇮🇳 (GMT +5:30) with over <span class="highlight">2+ years</span> of mastery in the craft. 
+        <br><br>
+        I don't just cut video; I manipulate time and flow. I specialize in <strong>Flow-Cut Editing</strong>, tone-setting visuals, and immersive audio synchronization. If you have an idea, I have the vision to make it reality.
+      </p>
+    </div>
   </section>
 
   <section id="portfolio">
-    <h2>Portfolio Highlights</h2>
-    <div class="portfolio-item">
-      <h3>Project 1: [Project Name]</h3>
-      <video controls>
-        <source src="[your-video-link.mp4]" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p>Description of the project here.</p>
+    <div class="section-header reveal">
+      <h2>My Masterpieces</h2>
     </div>
+    
+    <div class="portfolio-grid">
+      
+      <div class="portfolio-item reveal">
+        <div class="video-wrapper">
+          <video controls poster="./Assets/Thumbnails/thumb1.jpg"> <source src="[your-video-link.mp4]" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-info">
+          <h3>Anime AMV / Edit Name</h3>
+          <p>A high-intensity flow edit focusing on beat sync and color grading.</p>
+          <div class="tags">
+            <span>#CapCut</span><span>#4K</span><span>#Flow</span>
+          </div>
+        </div>
+      </div>
 
-    <div class="portfolio-item">
-      <h3>Project 2: [Project Name]</h3>
-      <video controls>
-        <source src="[your-video-link.mp4]" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p>Description of the project here.</p>
+      <div class="portfolio-item reveal">
+        <div class="video-wrapper">
+          <video controls>
+            <source src="[your-video-link.mp4]" type="video/mp4">
+          </video>
+        </div>
+        <div class="project-info">
+          <h3>Gaming Montage</h3>
+          <p> immersive sound design and smooth transitions for competitive gameplay.</p>
+          <div class="tags">
+            <span>#Gaming</span><span>#Montage</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal">
+        <div class="video-wrapper">
+           <div class="video-placeholder">Coming Soon</div>
+        </div>
+        <div class="project-info">
+          <h3>Upcoming Project</h3>
+          <p>Currently working on something massive. Stay tuned.</p>
+          <div class="tags">
+            <span>#WIP</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Add more projects here -->
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="social-icons">
-        <!-- Discord -->
-        <a href="https://discord.com/users/NGxFreakJOD" target="_blank" class="icon-link">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord">
+  <section id="contact" class="reveal">
+    <h2>Let's Create Magic</h2>
+    <p class="contact-sub">DM me on Discord or Instagram for commissions.</p>
+    
+    <div class="social-grid">
+        <a href="https://discord.com/users/NGxFreakJOD" target="_blank" class="social-card discord">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord">
+            <span>Discord</span>
         </a>
 
-        <!-- Email -->
-        <a href="mailto:ssrworks1@gmail.com" class="icon-link">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email">
+        <a href="https://www.instagram.com/unstable._.saminur" target="_blank" class="social-card instagram">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
+            <span>Instagram</span>
         </a>
-        
-        <a href="https://www.instagram.com/unstable._.saminur?igsh=cjl5M3FwZjk3OXNv" class="icon-link">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Email">
+
+        <a href="mailto:ssrworks1@gmail.com" class="social-card email">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email">
+            <span>Email</span>
         </a>
     </div>
   </section>
 
   <footer>
-    <p>Follow me on: <a href="[your-social-media-link]" target="_blank">Instagram</a>, <a href="[your-social-media-link]" target="_blank">YouTube</a></p>
+    <p>© 2024 SSR Works | <span class="highlight">Freak_JOD</span></p>
   </footer>
+
+  <script>
+    window.addEventListener('scroll', reveal);
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal');
+      for(var i = 0; i < reveals.length; i++){
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+    // Trigger once on load
+    reveal();
+  </script>
 </body>
 </html>
