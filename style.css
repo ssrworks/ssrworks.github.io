@@ -47,17 +47,7 @@ body {
 /* ------------------------------
    2. DYNAMIC BACKGROUND (The Mesh)
 ------------------------------ */
-.ambient-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: radial-gradient(circle at 15% 50%, rgba(122, 92, 255, 0.08), transparent 55%),
-              radial-gradient(circle at 85% 30%, rgba(0, 212, 255, 0.08), transparent 55%);
-  animation: bgPulse 10s ease-in-out infinite alternate;
-}
+
 
 @keyframes bgPulse {
   0% { transform: scale(1); opacity: 0.5; }
@@ -79,7 +69,27 @@ header {
 }
 
 nav {
-  display: flex;
+  display: flex/* ------------------------------
+   2. DYNAMIC BACKGROUND (The Mesh)
+------------------------------ */
+.ambient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  /* MODIFICATIONS FOR MORE GLOW */
+  background: radial-gradient(circle at 15% 50%, rgba(122, 92, 255, 0.2), transparent 50%), /* Increased opacity (0.2 from 0.08) and reduced transparency stop (50% from 55%) */
+              radial-gradient(circle at 85% 30%, rgba(0, 212, 255, 0.2), transparent 50%);  /* Increased opacity (0.2 from 0.08) and reduced transparency stop (50% from 55%) */
+  /* END MODIFICATIONS */
+  animation: bgPulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgPulse {
+  0% { transform: scale(1); opacity: 0.7; }  /* Increased minimum opacity (0.7 from 0.5) */
+  100% { transform: scale(1.1); opacity: 1; }
+};
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
